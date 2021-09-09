@@ -2,7 +2,6 @@
 //whereas let,const is local
 //always use fucking let,const
 const express = require("express");
-const bodyParser = require("body-parser");
 const Date = require(__dirname + "/date.js");
 
 const app = express();
@@ -12,7 +11,7 @@ let workItems =[];
 
 app.set("view engine", "ejs");
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 app.get("/", function(req,res){
